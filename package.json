@@ -1,0 +1,19 @@
+{
+  "name": "wright",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "bin": {
+    "wright": "./bin/wright"
+  },
+  "preferGlobal": true,
+  "scripts": {},
+  "author": "Rasmus Porsager <rasmus@porsager.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "1.6.0",
+    "finalhandler": "0.5.0",
+    "minimist": "1.2.0",
+    "serve-static": "1.11.1"
+  }
+}
