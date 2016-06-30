@@ -19,11 +19,9 @@ const command = minimist(process.argv.slice(2), {
 const help = command.help || command.main === 'help'
 const version = command.version || command.main === 'version'
 
-command.main = command._[0]
-
 if (help)
   console.log(fs.readFileSync(path.join(__dirname, 'help.md'), 'utf8').replace('${version}', pkg.version))
 else if (version)
   console.log('wright version ' + pkg.version)
 else
-  wright(command).catch(err => console.error(err))
+  wright({ main: command._[0], reload: command.reload }).catch(err => console.error(err))
