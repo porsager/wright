@@ -21,13 +21,14 @@ const command = minimist(process.argv.slice(2), {
 const help = command.help || command.main === 'help'
 const version = command.version || command.main === 'version'
 
-command.main = command._[0] || command.main
-
-delete command._
-
 if (help)
-  console.log(fs.readFileSync(path.join(__dirname, 'help.md'), 'utf8').replace('${version}', pkg.version))
+  return console.log(fs.readFileSync(path.join(__dirname, 'help.md'), 'utf8').replace('${version}', pkg.version))
 else if (version)
-  console.log('wright version ' + pkg.version)
-else
-  wright(command).catch(err => console.error(err))
+  return console.log('wright version ' + pkg.version)
+
+wright({
+  main: command._[0] || command.main,
+  reload: command.reload,
+  fps: command.fps,
+  verbose: command.verbose
+}).catch(err => console.error(err))
