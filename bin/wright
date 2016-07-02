@@ -17,7 +17,8 @@ const command = minimist(process.argv.slice(2), {
     w: 'watch',
     f: 'fps',
     verbose: 'verbose'
-  }
+  },
+  boolean: ['verbose', 'fps']
 })
 
 const help = command.help || command.main === 'help'
