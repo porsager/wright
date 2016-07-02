@@ -13,7 +13,7 @@ const command = minimist(process.argv.slice(2), {
     h: 'help',
     r: 'reload',
     v: 'version',
-    s: 'static',
+    s: 'serve',
     w: 'watch',
     f: 'fps',
     verbose: 'verbose'
