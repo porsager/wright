@@ -32,6 +32,6 @@ wright({
   main: command._[0] || command.main,
   reload: command.reload,
   fps: command.fps,
-  server: command.serve,
+  serve: command.serve,
   verbose: command.verbose
 }).catch(err => console.error(err))
