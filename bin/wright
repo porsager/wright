@@ -10,12 +10,12 @@ const minimist = require('minimist')
 
 const command = minimist(process.argv.slice(2), {
   alias: {
+    r: 'run',
+    f: 'fps',
     h: 'help',
-    r: 'reload',
-    v: 'version',
     s: 'serve',
     w: 'watch',
-    f: 'fps',
+    v: 'version',
     verbose: 'verbose'
   },
   boolean: ['verbose', 'fps']
