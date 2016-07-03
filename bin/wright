@@ -16,23 +16,25 @@ const command = minimist(process.argv.slice(2), {
     s: 'serve',
     w: 'watch',
     v: 'version',
-    verbose: 'verbose'
+    d: 'debug'
   },
-  boolean: ['verbose', 'fps']
+  boolean: ['debug', 'fps']
 })
+
+command.main = command._[0] || command.main
 
 const help = command.help || command.main === 'help'
 const version = command.version || command.main === 'version'
 
 if (help)
-  return console.log(fs.readFileSync(path.join(__dirname, 'help.md'), 'utf8').replace('${version}', pkg.version))
+  return console.log(fs.readFileSync(path.join(__dirname, 'help.txt'), 'utf8').replace('${version}', pkg.version))
 else if (version)
   return console.log('wright version ' + pkg.version)
 
 wright({
-  main: command._[0] || command.main,
+  main: command.main,
   reload: command.reload,
   fps: command.fps,
   serve: command.serve,
-  verbose: command.verbose
+  debug: command.debug
 }).catch(err => console.error(err))
