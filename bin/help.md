@@ -1,2 +1,0 @@
-# wright version ${version}
-

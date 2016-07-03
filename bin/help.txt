@@ -1,0 +1,23 @@
+wright version ${version}
+=====================================
+
+Usage: wright main {OPTIONS}
+
+main              Main should specify the entry point of your app. If you have
+                  an index.html file that would be it or if you have an app.js
+                  file use that. You can also specify a port or a full url if
+                  you already have a server running.
+
+Standard Options:
+
+-r,  --run        Input javascript as a string or point to a js file to run
+                  after a script on the site was hot loaded
+-w,  --watch      Specify which directory to watch
+                  Defaults to root of main file / CWD
+-s,  --serve      Specify which directory to serve - Defaults to CWD
+-f,  --fps        Activate the chrome fps counter
+-d,  --debug      Enable internal and chrome logs
+-v,  --version    Output the version
+-h,  --help       Show this message
+
+For more information visit - https://github.com/porsager/wright
