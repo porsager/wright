@@ -33,7 +33,7 @@ else if (version)
 
 wright({
   main: command.main,
-  reload: command.reload,
+  run: command.run,
   fps: command.fps,
   serve: command.serve,
   debug: command.debug
