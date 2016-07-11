@@ -15,6 +15,9 @@ Standard Options:
 -w,  --watch      Specify which directory to watch
                   Defaults to root of main file / CWD
 -s,  --serve      Specify which directory to serve - Defaults to CWD
+
+Advanced Options:
+
 -f,  --fps        Activate the chrome fps counter
 -d,  --debug      Enable internal and chrome logs
 -v,  --version    Output the version
