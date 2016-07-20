@@ -1,7 +1,7 @@
 # Wright
 
 Hot reloading of js, css and static assets with fallback to regular refresh.
-Use it with your own choise of frameworks or libraries like react, mithril, rollup, browserify, candylize, fragmentor or pistontulastic.
+Use it with your own choice of frameworks or libraries like react, mithril, rollup, browserify, candylize, fragmentor or pistontulastic.
 
 Currently works with Chrome, tested on OSX & Windows 10.
 
@@ -26,7 +26,8 @@ Standard Options:
 -w,  --watch      Specify which directory to watch
                   Defaults to root of main file / CWD
 
--s,  --serve      Specify which directory to serve - Defaults to CWD
+-s,  --serve      Specify which directory to serve
+                  Defaults to root of main html file or CWD
 ```
 #### Example with all options
 ```
@@ -55,13 +56,6 @@ wright({}).then(browser => {})
 A simple full refresh of the browser.
 
 #### .inject(source)
-
-
-#### .watch
-
-
-#### .reload(path)
-Will try to hot reload the file at the path.
 
 
 ## Examples
