@@ -1,0 +1,7 @@
+{
+  "name": "wright-example-simple",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "wright -r \"redraw()\" js/app.js"
+  }
+}
