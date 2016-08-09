@@ -4,7 +4,7 @@ const wright = require('../../lib')
     , commonJs = require('rollup-plugin-commonjs')
 
 wright({
-  run: 'window.m.redraw()',
+  run: 'm.redraw()',
   js: {
     path: 'js/**/*.js',
     promise: roll
