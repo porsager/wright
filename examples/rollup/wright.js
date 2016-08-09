@@ -1,28 +1,36 @@
 const wright = require('../../lib')
     , rollup = require('rollup')
-    , path = require('path')
+    , stylus = require('stylus')
+    , fs = require('fs')
 
 wright({
-  run: 'window.reload()'
-}).then(browser => {
-
-  browser.watch.on('all', (event, file) => {
-    const ext = path.extname(file)
-
-    if (ext === '.js')
-      roll().then(browser.inject)
-  })
-
-  return roll().then(browser.inject)
+  debug: true,
+  run: 'window.reload()',
+  js: {
+    path: 'js/**/*.js',
+    promise: roll
+  },
+  css: {
+    path: 'css/**/*.styl',
+    promise: style
+  }
 })
 
 function roll() {
 
   return rollup.rollup({
-    entry: 'src/app.js'
-  }).then(bundle => {
+    entry: 'js/app.js'
+  }).then(bundle => bundle.generate({ format: 'iife' }).code)
 
-    return bundle.generate({ format: 'iife' }).code
+}
 
+function style() {
+  return new Promise((resolve, reject) => {
+    fs.readFile('css/style.styl', 'utf8', (err, str) => {
+      if (err)
+        return reject(err)
+
+      stylus(str).render((err, css) => err ? reject(err) : resolve(css))
+    })
   })
 }

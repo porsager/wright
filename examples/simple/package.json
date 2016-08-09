@@ -2,6 +2,7 @@
   "name": "wright-example-simple",
   "version": "1.0.0",
   "scripts": {
-    "start": "wright -r \"redraw()\" js/app.js"
+    "html": "node ../../bin/wright -d -r \"window.reload()\" index.html",
+    "app": "node ../../bin/wright -d -r \"window.reload()\" js/app.js"
   }
 }

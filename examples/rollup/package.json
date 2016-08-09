@@ -6,5 +6,8 @@
   },
   "dependencies": {
     "rollup": "0.34.1"
+  },
+  "devDependencies": {
+    "stylus": "0.54.5"
   }
 }
