@@ -1,0 +1,13 @@
+{
+  "name": "wright-example-mithril",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node dev.js"
+  },
+  "devDependencies": {
+    "mithril": "lhorie/mithril.js#rewrite",
+    "rollup": "0.34.1",
+    "rollup-plugin-commonjs": "3.3.1",
+    "rollup-plugin-node-resolve": "2.0.0"
+  }
+}
