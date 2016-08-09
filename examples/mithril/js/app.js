@@ -5,7 +5,8 @@ import login from './models/login'
 window.m = m
 
 if (!login.user) {
-  login.redirect = window.location.pathname + window.location.search
+  if (window.location.pathname !== '/login')
+    login.redirect = window.location.pathname + window.location.search
   window.history.pushState(null, null, '/login')
 }
 
