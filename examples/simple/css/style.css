@@ -1,6 +1,8 @@
 body {
-  background: green;
+  height: 100%;
   font-size: 26px;
   text-align: center;
   padding: 50px;
+  background: green url('../images/pure.jpg') no-repeat;
+  background-size: cover;
 }
