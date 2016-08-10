@@ -6,8 +6,8 @@ const wright = require('../../lib')
 wright({
   run: 'm.redraw()',
   js: {
-    path: 'js/**/*.js',
-    promise: roll
+    watch: 'js/**/*.js',
+    compile: roll
   }
 })
 
