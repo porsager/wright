@@ -7,12 +7,12 @@ wright({
   debug: true,
   run: 'window.reload()',
   js: {
-    path: 'js/**/*.js',
-    promise: roll
+    watch: 'js/**/*.js',
+    compile: roll
   },
   css: {
-    path: 'css/**/*.styl',
-    promise: style
+    watch: 'css/**/*.styl',
+    compile: style
   }
 })
 
