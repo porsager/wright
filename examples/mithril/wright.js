@@ -4,6 +4,7 @@ const wright = require('../../lib')
     , commonJs = require('rollup-plugin-commonjs')
 
 wright({
+  main: 'index.html',
   run: 'm.redraw()',
   js: {
     watch: 'js/**/*.js',

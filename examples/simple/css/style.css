@@ -3,6 +3,12 @@ body {
   font-size: 26px;
   text-align: center;
   padding: 50px;
-  background: green url('../images/pure.jpg') no-repeat;
-  background-size: cover;
+  background: blue;
+  color: white;
+  font-family: monospace;
+  font-size: 22px;
+}
+
+#main {
+  margin: 50px;
 }

@@ -1,28 +1,25 @@
 # Simple example
 
-For hot reloading when css changes and a full refresh when js changes run:
-```
-wright index.html
-```
+To run this example you need to cd to this directory and have wright installed globally or use the npm run scripts.
 
-If you want to hot reload js you can call it with a run function like this
+To hot reload js you need to have a global function to call when you script changes. Hot reloading js works by injecting the new script to chrome, but since the page won't be refreshed no initialization will take place (which is exactly what we want). Instead there should be a global function availble to run the newly injected script. Call it with a run function like this
 ```
 wright -r "redraw()" index.html
 ```
 
 Now try to change background color in the style.css file or change the text in the javascript files. If you change the html file a full refresh will also be done.
 
-You can also start wright with the app.js file directly like this
+You can also start wright with the app.js and style.css file directly like this
 ```
-wright -r "redraw()" js/app.js
+wright -r "redraw()" js/app.js css/style.css
 ```
 
-When hot reloading javascript you need something in JS that can redraw your view from your apps state. This works very nicely with various Virtual DOM libraries.
+When hot reloading javascript you need something in JS that can redraw your view from your apps state. This works very well with various Virtual DOM libraries.
 
 ## Virtual DOM examples
 
-[Mithril](https://github.com/porsager/wright/examples/mithril)
+- [Mithril](https://github.com/porsager/wright/examples/mithril)
 
-[React](https://github.com/porsager/wright/examples/react)
-
-[Cycle](https://github.com/porsager/wright/examples/cycle)
+### Coming soon
+- React.js
+- Cycle.js

@@ -2,7 +2,7 @@
   "name": "wright-example-mithril",
   "version": "1.0.0",
   "scripts": {
-    "start": "node dev.js"
+    "start": "node wright.js"
   },
   "devDependencies": {
     "mithril": "lhorie/mithril.js#rewrite",

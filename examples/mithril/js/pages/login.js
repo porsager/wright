@@ -9,20 +9,26 @@ export default {
 
   view: ({ state }) => [
     m('h1', 'Login'),
-    m('p', login.error || 'Who are you?'),
+    m('p', login.error || 'Try using test/test'),
     m('form', {
       onsubmit: e => {
         e.preventDefault()
         login.submit(state)
       }
     }, [
-      m('input', {
-        value: login.user || state.username,
-        onchange: e => state.username = e.target.value
-      }),
-      m('input[type=password]', {
-        onchange: e => state.password = e.target.value
-      }),
+      m('label', [
+        'Username',
+        m('input', {
+          value: login.user || state.username,
+          onchange: e => state.username = e.target.value
+        })
+      ]),
+      m('label', [
+        'Password',
+        m('input[type=password]', {
+          onchange: e => state.password = e.target.value
+        })
+      ]),
       m('input[type=submit]')
     ])
   ]

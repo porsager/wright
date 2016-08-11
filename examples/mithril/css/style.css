@@ -1,3 +1,22 @@
 body {
-  background: red;
+  background: #333;
+  color: #ddd;
+  font-family: monospace;
+}
+
+#login {
+
+}
+
+input, button {
+  padding: 5px;
+  background: none;
+  border: 2px solid #ddd;
+  color: #ddd;
+  font-family: monospace;
+}
+
+header button {
+  float: right;
+  margin: 0;
 }
