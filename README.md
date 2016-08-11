@@ -48,15 +48,15 @@ const wright = require('wright')
 
 wright({
 
-  main    : '/public/index.html',
-  serve   : '/public',
+  main    : 'public/index.html',
+  serve   : 'public',
   run     : 'm.redraw()'
   js      : {
-    watch   : '/src/js/**/*.js'
+    watch   : 'src/js/**/*.js'
     compile : () => rollup()
   },
   css: {
-    watch   : '/src/css/**/*.js'
+    watch   : 'src/css/**/*.js'
     compile : () => stylus()
   }
 })
