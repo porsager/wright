@@ -11,16 +11,16 @@ main              Main should specify the entry point of your app. If you have
 Standard Options:
 
 -r,  --run        Input javascript as a string or point to a js file to run
-                  after a script on the site was hot loaded
--w,  --watch      Specify which directory to watch
-                  Defaults to root of main file / CWD
--s,  --serve      Specify which directory to serve - Defaults to CWD
+                  after a script on the site was hot loaded.
+
+-s,  --serve      Specify which directory to serve.
+                  Defaults to root of main html file or CWD.
 
 Advanced Options:
 
--f,  --fps        Activate the chrome fps counter
--d,  --debug      Enable internal and chrome logs
--v,  --version    Output the version
--h,  --help       Show this message
+-f,  --fps        Activate the chrome fps counter.
+-d,  --debug      Enable internal and chrome logs.
+-v,  --version    Output the version.
+-h,  --help       Show this message.
 
 For more information visit - https://github.com/porsager/wright

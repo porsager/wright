@@ -10,14 +10,14 @@ const minimist = require('minimist')
 
 const command = minimist(process.argv.slice(2), {
   alias: {
-    r: 'run',
-    f: 'fps',
     h: 'help',
-    s: 'serve',
     v: 'version',
-    d: 'debug'
+    r: 'run',
+    s: 'serve',
+    d: 'debug',
+    f: 'fps'
   },
-  boolean: ['debug', 'fps']
+  boolean: ['fps']
 })
 
 command.main = command._[0] || command.main
