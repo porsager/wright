@@ -7,7 +7,7 @@ export default {
     state.password = ''
   },
 
-  view: ({ state }) => [
+  view: ({ state }) => m('form#login', [
     m('h1', 'Login'),
     m('p', login.error || 'Try using test/test'),
     m('form', {
@@ -16,20 +16,16 @@ export default {
         login.submit(state)
       }
     }, [
-      m('label', [
-        'Username',
-        m('input', {
-          value: login.user || state.username,
-          onchange: e => state.username = e.target.value
-        })
-      ]),
-      m('label', [
-        'Password',
-        m('input[type=password]', {
-          onchange: e => state.password = e.target.value
-        })
-      ]),
+      m('input', {
+        value: login.user || state.username,
+        placeholder: 'username',
+        onchange: e => state.username = e.target.value
+      }),
+      m('input[type=password]', {
+        placeholder: 'password',
+        onchange: e => state.password = e.target.value
+      }),
       m('input[type=submit]')
     ])
-  ]
+  ])
 }

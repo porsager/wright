@@ -1,19 +1,80 @@
+@import url('/css/ball.css');
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  background: #333;
-  color: #ddd;
-  font-family: monospace;
+  background: white;
+  color: #333;
+  margin: 0px;
+  min-height: 100%;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+header {
+  position: relative;
+  background: #2a2a2a;
+}
+
+header button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.75em;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 18px 20px 14px 20px;
+  margin: 0 3px;
+  text-transform: uppercase;
+  border-bottom: 4px solid #555;
+  cursor: pointer;
+  text-decoration: none;
+  color: gray;
+  transition: all 0.2s;
+}
+
+header nav a:hover, header nav a.active {
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+main {
+  padding: 20px;
 }
 
 #login {
+  width: 320px;
+  margin: 50px auto;
+  text-align: center;
+}
 
+#login input {
+  display: block;
+  margin: 10px;
+  width: 300px;
 }
 
 input, button {
   padding: 5px;
-  background: none;
   border: 2px solid #ddd;
-  color: #ddd;
-  font-family: monospace;
+  font-size: 16px;
 }
 
 header button {

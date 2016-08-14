@@ -5,6 +5,7 @@ const wright = require('../../lib')
 
 wright({
   main: 'index.html',
+  debug: true,
   run: 'm.redraw()',
   js: {
     watch: 'js/**/*.js',

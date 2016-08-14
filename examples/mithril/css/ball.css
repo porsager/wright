@@ -1,0 +1,15 @@
+@keyframes roll {
+  0% { transform: translateX(-200px); }
+  50% { transform: translateX(200px); }
+  100% { transform: translateX(-200px); }
+}
+
+.ball {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: orange;
+  border-radius: 20px;
+  animation: roll 3s infinite;
+  animation-fill-mode: forwards;
+}

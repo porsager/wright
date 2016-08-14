@@ -1,17 +1,17 @@
 import m from 'mithril'
-import l from './layout/index'
+import l from './layout'
 import login from './pages/login'
-import home from './pages/home'
-import about from './pages/about'
-import users from './pages/users'
+import intro from './pages/intro'
+import js from './pages/js'
+import css from './pages/css'
 
 m.route.prefix('')
 
 const routes = {
   '/login'  : login,
-  '/'       : l(home),
-  '/about'  : l(about),
-  '/users'  : l(users)
+  '/'       : l(intro),
+  '/js'     : l(js),
+  '/css'    : l(css)
 }
 
 export default routes

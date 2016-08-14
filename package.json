@@ -2,14 +2,18 @@
   "name": "wright",
   "version": "0.2.0",
   "description": "",
+  "author": "Rasmus Porsager <rasmus@porsager.com>",
+  "license": "MIT",
   "main": "lib/index.js",
   "bin": {
     "wright": "./bin/wright"
   },
   "preferGlobal": true,
-  "scripts": {},
-  "author": "Rasmus Porsager <rasmus@porsager.com>",
-  "license": "MIT",
+  "scripts": {
+    "try:rollup": "cd examples/rollup && npm install && node wright",
+    "try:mithril": "cd examples/mithril && npm install && node wright",
+    "try:simple": "cd examples/simple && node ../../bin/wright -r \"window.reload()\" index.html"
+  },
   "dependencies": {
     "chokidar": "1.6.0",
     "finalhandler": "0.5.0",

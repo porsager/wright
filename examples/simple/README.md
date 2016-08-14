@@ -2,7 +2,7 @@
 
 To run this example you need to cd to this directory and have wright installed globally or use the npm run scripts.
 
-To hot reload js you need to have a global function to call when you script changes. Hot reloading js works by injecting the new script to chrome, but since the page won't be refreshed no initialization will take place (which is exactly what we want). Instead there should be a global function availble to run the newly injected script. Call it with a run function like this
+To hot reload js you need to have a global function to call when you script changes. Hot reloading js works by injecting the new script to chrome, but since the page won't be refreshed no initialization will take place (which is exactly what we want). Instead there should be a global function available to run the newly injected script. Call it with the (-r --run) parameter like this
 ```
 wright -r "redraw()" index.html
 ```
