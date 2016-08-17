@@ -1,7 +1,6 @@
 import m from 'mithril'
-import login from './models/login'
 
-const layout = {
+export default {
   view: (vnode) => {
     const menus = [
       { href: '/', title: 'intro' },
@@ -31,8 +30,3 @@ const layout = {
     ]
   }
 }
-
-export default function(page) {
-  return { render: () => m(layout, m(page)) }
-}
-

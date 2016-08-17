@@ -7,11 +7,25 @@ import css from './pages/css'
 
 m.route.prefix('')
 
+const layoutRoutes = {
+  '/'     : intro,
+  '/css'  : css,
+  '/js'   : js,
+  '/404'  : { view: () => m('h1', 'not found') }
+}
+
+const layout = {
+  view: vnode => {
+    return m(l, m(layoutRoutes[vnode.attrs.route]))
+  }
+}
+
 const routes = {
   '/login'  : login,
-  '/'       : l(intro),
-  '/js'     : l(js),
-  '/css'    : l(css)
+  '/'       : layout,
+  '/js'     : layout,
+  '/css'    : layout,
+  '/404'    : layout
 }
 
 export default routes

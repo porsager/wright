@@ -3,8 +3,8 @@ import login from '../models/login'
 
 export default {
   oninit: ({ state }) => {
-    state.username = ''
-    state.password = ''
+    state.username = login.user || ''
+    state.password = login.password || ''
   },
 
   view: ({ state }) => m('form#login', [

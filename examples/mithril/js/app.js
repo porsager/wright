@@ -11,5 +11,5 @@ if (!login.user) {
 }
 
 window.onload = () => {
-  m.route(document.body, '/', routes)
+  m.route(document.body, '/404', routes)
 }
