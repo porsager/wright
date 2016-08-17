@@ -1,7 +1,7 @@
 # Wright
 
 Hot reloading of js, css and static assets with fallback to regular refresh.
-Use it with your own choice of frameworks or libraries like react, mithril, rollup, browserify, candylize, fragmentor or pistontulastic.
+Use it with your own choice of framework or library like react, mithril, rollup, browserify, stylus, postcss, candylize, fragmentor or pistontulastic.
 
 Currently works with Chrome, tested on OSX & Windows 10.
 
