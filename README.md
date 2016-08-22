@@ -30,7 +30,7 @@ Standard Options:
 ```
 #### Example with all options
 ```
-$ wright public/app.js -s public -w src -r "m.redraw()"
+$ wright public/app.js -s ./public -r "m.redraw()"
 ```
 
 ## Javascript API
