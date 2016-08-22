@@ -1,6 +1,6 @@
 import m from 'mithril'
 
-export default {
+const layout = {
   view: (vnode) => {
     const menus = [
       { href: '/', title: 'intro' },
@@ -29,4 +29,8 @@ export default {
       m('main', vnode.children)
     ]
   }
+}
+
+export default function(page) {
+  return { render: () => m(layout, m(page)) }
 }
