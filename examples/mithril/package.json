@@ -5,7 +5,7 @@
     "start": "node wright.js"
   },
   "devDependencies": {
-    "mithril": "lhorie/mithril.js#rewrite",
+    "mithril": "lhorie/mithril.js#8c5b5c7f30bd7e4945e6b0c57348ec4a65c27879",
     "rollup": "0.34.1",
     "rollup-plugin-commonjs": "3.3.1",
     "rollup-plugin-node-resolve": "2.0.0"
