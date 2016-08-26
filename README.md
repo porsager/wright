@@ -16,10 +16,10 @@ Wright has been tested with many frameworks, and there are plenty of examples to
 
 Tested successfully with:
 
+- [VanillaJs](https://github.com/porsager/Wright/tree/master/examples/simple)
 - React
 - [Mithril](https://github.com/porsager/Wright/tree/master/examples/mithril)
 - [Rollup](https://github.com/porsager/Wright/tree/master/examples/rollup)
-- Rollup
 - Browserify
 - stylus
 - postcss
@@ -106,10 +106,6 @@ Should return an object containing a watch and compile key.
 
 **compile** function or promise returning a compiled string.
 
-## Examples
-
-- Mithril
-- Vanilla
 
 ## Advanced
 
