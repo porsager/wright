@@ -23,9 +23,8 @@ Tested successfully with:
 - Browserify
 - stylus
 - postcss
-- candylize
-- fragmentor
-- pistontulastic
+
+And should also work awesomely with candylize, fragmentor, pistontulastic or anything else you can throw at it :thumbsup:
 
 Currently works with Chrome, tested on OSX & Windows 10.
 
