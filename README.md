@@ -1,7 +1,31 @@
 # Wright
 
-Hot reloading of js, css and static assets with fallback to regular refresh.
-Use it with your own choice of framework or library like react, mithril, rollup, browserify, stylus, postcss, candylize, fragmentor or pistontulastic.
+#### Hot Module Reloading: at the *Virtual Machine* level
+
+- Compatible with any framework (or no framework at all)
+- Patches your JS, CSS and Static Assets on change without losing instance state
+- Uses the Chrome Debugger Protocol to replace the source files in the VM
+- Convenient CLI for lightweight build systems / npm scripts
+- Fallback to regular refresh if the Chrome Debugger Protocol is not available
+
+## Framework Support
+
+Wright is framework agnostic because the code patching happens at the VM level.
+
+Wright has been tested with many frameworks, and there are plenty of examples to help get you started.
+
+Tested successfully with:
+
+- React
+- [Mithril](https://github.com/porsager/Wright/tree/master/examples/mithril)
+- [Rollup](https://github.com/porsager/Wright/tree/master/examples/rollup)
+- Rollup
+- Browserify
+- stylus
+- postcss
+- candylize
+- fragmentor
+- pistontulastic
 
 Currently works with Chrome, tested on OSX & Windows 10.
 
