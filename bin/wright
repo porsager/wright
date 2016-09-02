@@ -16,7 +16,8 @@ const command = minimist(process.argv.slice(2), {
     s: 'serve',
     p: 'port',
     d: 'debug',
-    f: 'fps'
+    f: 'fps',
+    w: 'watch'
   },
   boolean: ['fps']
 })
@@ -39,5 +40,6 @@ wright({
   fps: command.fps,
   port: command.port,
   serve: command.serve,
-  debug: command.debug
+  debug: command.debug,
+  watch: command.watch
 }).catch(err => console.error(err))
