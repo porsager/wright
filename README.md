@@ -46,10 +46,12 @@ main              Main should specify the entry point of your app. If you have
 Standard Options:
 
 -r,  --run        Input javascript as a string or point to a js file to run
-                  after a script on the site was hot loaded
+                  after a script on the site was hot loaded.
 
--s,  --serve      Specify which directory to serve
-                  Defaults to root of main html file or CWD
+-s,  --serve      Specify which directory to serve.
+                  This is the directory where wright will watch the files
+                  loaded in the browser.
+                  Defaults to root of main html file or CWD.
 ```
 #### Example with all options
 ```
@@ -93,7 +95,9 @@ Main should specify the entry point of your app. If you have an index.html file 
 If you don't specify main wright will use a boilerplate html file and expect you to use the js & css options for injecting your code.
 
 #### serve
-Specify which directory to serve. Defaults to root of main html file or CWD.
+Specify which directory to serve.
+This is the directory where wright will watch the files loaded in the browser.
+Defaults to root of main html file or CWD.
 
 #### run
 Input javascript as a string or point to a js file to run after a script on the site was hot loaded.
