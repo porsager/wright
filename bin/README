@@ -5,22 +5,25 @@ Usage: wright main {OPTIONS}
 
 main              Main should specify the entry point of your app. If you have
                   an index.html file that would be it or if you have an app.js
-                  file use that. You can also specify a port or a full url if
-                  you already have a server running.
+                  file use that. If you already have you own server running
+                  just specifiy the full url like http://localhost:5000
 
 Standard Options:
 
--r,  --run        Input javascript as a string or point to a js file to run
-                  after a script on the site was hot loaded.
+-r,  --run        Activates Hot module reloading. This will inject any changed
+                  javascript files, and then run the script or js file
+                  provided here.
 
--s,  --serve      Specify which directory to serve.
-                  Defaults to root of main html file or CWD.
+-s,  --serve      Specify which directory that is being served.
+                  Defaults to folder of main file or the current directory.
+
+-w,  --watch      Any folder, file or file type to watch that should cause a
+                  refresh of the browser. Use commas to add more.
 
 Advanced Options:
 
 -f,  --fps        Activate the chrome fps counter.
--d,  --debug      Enable internal and chrome logs.
+-d,  --debug      Enable debug logging.
 -v,  --version    Output the version.
--h,  --help       Show this message.
 
 For more information visit - https://github.com/porsager/wright

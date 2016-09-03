@@ -40,18 +40,20 @@ Using wright as a cli makes it easy to get started right away or to set up your 
 ```
 main              Main should specify the entry point of your app. If you have
                   an index.html file that would be it or if you have an app.js
-                  file use that. You can also specify a local port or a full 
-                  url if you already have a server running.
+                  file use that. If you already have you own server running
+                  just specifiy the full url like http://localhost:5000
 
 Standard Options:
 
--r,  --run        Input javascript as a string or point to a js file to run
-                  after a script on the site was hot loaded.
+-r,  --run        Activates Hot module reloading. This will inject any changed
+                  javascript files, and then run the script or js file
+                  provided here.
 
--s,  --serve      Specify which directory to serve.
-                  This is the directory where wright will watch the files
-                  loaded in the browser.
-                  Defaults to root of main html file or CWD.
+-s,  --serve      Specify which directory that is being served.
+                  Defaults to folder of main file or the current directory.
+
+-w,  --watch      Any folder, file or file type to watch that should cause a
+                  refresh of the browser. Use commas to add more.
 ```
 #### Example with all options
 ```
@@ -66,7 +68,7 @@ Using wright with javascript is great if you have some build steps or compilatio
 $ npm install -D wright
 ```
 
-Wright exports one function which takes an object that defines hot reloading.
+Wright exports one function which takes an object containing options.
 
 ```
 const wright = require('wright')
@@ -77,38 +79,52 @@ wright({
   serve   : 'public',
   run     : 'm.redraw()'
   js      : {
-    watch   : 'src/js/**/*.js'
+    watch   : 'src/js/**/*.js',
+    jail    : true,
     compile : () => rollup()
   },
-  css: {
-    watch   : 'src/css/**/*.js'
+  css     : {
+    watch   : 'src/css/**/*.js',
     compile : () => stylus()
-  }
+  },
+  watch   : '**/*.php'
 })
 ```
 
 ### Options
 
 
-#### main
-Main should specify the entry point of your app. If you have an index.html file that would be it or if you have an app.js file use that. You can also specify a local port or a full url if you already have a server running.
-If you don't specify main wright will use a boilerplate html file and expect you to use the js & css options for injecting your code.
+#### main [String]
+Main should specify the entry point of your app. If you have an index.html file that would be it or if you have an app.js file use that. If you already have you own server running specifiy the full url like http://localhost:5000.
+If you don't specify anything wright will use a boilerplate html file and expect you to use the js & css options for injecting your code.
 
-#### serve
-Specify which directory to serve.
-This is the directory where wright will watch the files loaded in the browser.
+#### serve [String]
+Specify which directory to serve. This is the directory where wright will watch the files loaded in the browser.
 Defaults to root of main html file or CWD.
 
-#### run
-Input javascript as a string or point to a js file to run after a script on the site was hot loaded.
+#### run [String]
+Activates Hot module reloading. This will inject any changed javascript files, and then run the script or js file provided here.
 
-#### js & css
-Should return an object containing a watch and compile key.
+#### js [Object]
+You can add your build scripts here to do their thing when your source changes.
+Remember you just need to target chrome, so any build steps including ES6>ES5 transpiling or minification is unnecessary overhead.
 
-**watch** directory, file, glob pattern or array of those to watch.
+name     | description
+:--------|:-----
+watch    | Directory, file, glob pattern or array of what to watch.
+jail     | This will jail variables in your script to stop chrome from dereferencing them while doing Hot module reloading. Defaults to true.
+compile  | A function returning a promise, that resolve to a compiled css string.
 
-**compile** function or promise returning a compiled string.
+#### css
+Any css preprocessing can be done here.
 
+name     | description
+:--------|:-----
+watch    | Directory, file, glob pattern or array of what to watch.
+compile  | A function returning a promise, that resolve to a compiled css string.
+
+#### Watch
+Directory, file, glob pattern or array of something to watch that should cause a browser refresh
 
 ## Advanced
 
