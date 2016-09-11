@@ -22,7 +22,6 @@ const command = minimist(process.argv.slice(2), {
   boolean: ['fps']
 })
 
-command.files = command._
 command.main = command._[0]
 
 const help = command.help || command.main === 'help'
@@ -35,7 +34,6 @@ else if (version)
 
 wright({
   main: command.main,
-  files: command.files,
   run: command.run,
   fps: command.fps,
   port: command.port,
