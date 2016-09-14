@@ -1,0 +1,13 @@
+body {
+  height: 100%;
+  text-align: center;
+  padding: 50px;
+  background: blue;
+  color: white;
+  font-family: monospace;
+  font-size: 22px;
+}
+
+#main {
+  margin: 50px;
+}
