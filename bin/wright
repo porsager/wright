@@ -17,9 +17,10 @@ const command = minimist(process.argv.slice(2), {
     p: 'port',
     d: 'debug',
     f: 'fps',
-    w: 'watch'
+    w: 'watch',
+    j: 'jail'
   },
-  boolean: ['fps']
+  boolean: ['fps', 'jail']
 })
 
 command.main = command._[0]
@@ -35,6 +36,7 @@ else if (version)
 wright({
   main: command.main,
   run: command.run,
+  jail: !command.jail,
   fps: command.fps,
   port: command.port,
   serve: command.serve,
