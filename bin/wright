@@ -9,6 +9,7 @@ const minimist = require('minimist')
     , pkg = require('../package.json')
 
 const command = minimist(process.argv.slice(2), {
+  string: ['run-all'],
   alias: {
     h: 'help',
     v: 'version',
@@ -36,7 +37,8 @@ else if (version)
 wright({
   main: command.main,
   run: command.run,
-  jail: !command.jail,
+  runAll: command['run-all'],
+  jail: command.jail,
   fps: command.fps,
   port: command.port,
   serve: command.serve,
