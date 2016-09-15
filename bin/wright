@@ -10,6 +10,9 @@ const minimist = require('minimist')
 
 const command = minimist(process.argv.slice(2), {
   string: ['run-all'],
+  default: {
+    'jail': true
+  },
   alias: {
     h: 'help',
     v: 'version',
