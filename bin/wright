@@ -22,7 +22,8 @@ const command = minimist(process.argv.slice(2), {
     d: 'debug',
     f: 'fps',
     w: 'watch',
-    j: 'jail'
+    j: 'jail',
+    n: 'name'
   },
   boolean: ['fps', 'jail']
 })
@@ -40,6 +41,7 @@ else if (version)
 wright({
   main: command.main,
   run: command.run,
+  name: command.name,
   runAll: command['run-all'],
   jail: command.jail,
   fps: command.fps,
