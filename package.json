@@ -10,6 +10,7 @@
   },
   "preferGlobal": true,
   "scripts": {
+    "postuninstall": "node -e 'require(`./lib/utils`).uninstall()'",
     "try:rollup": "npm install && cd examples/rollup && npm install && node wright",
     "try:mithril": "npm install && cd examples/mithril && npm install && node rollup",
     "try:simple": "npm install && cd examples/simple && node ../../bin/wright -r \"window.reload()\" index.html"
