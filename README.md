@@ -64,9 +64,9 @@ Standard Options:
                   refresh of the browser. Use commas to add more.
 ```
 
-#### Example with all options
+#### Example
 ```
-$ wright public/app.js -s ./public -r m.redraw()
+$ wright dist/index.html -r "m.redraw()"
 ```
 
 ## Javascript API
