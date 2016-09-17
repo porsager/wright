@@ -21,7 +21,8 @@ Tested successfully with:
 - [Mithril](https://github.com/porsager/Wright/tree/master/examples/mithril)
 - [Rollup](https://github.com/porsager/Wright/tree/master/examples/rollup)
 - Browserify
-- stylus
+- [Webpack](https://github.com/porsager/Wright/tree/master/examples/webpack)
+- [Stylus](https://github.com/porsager/Wright/tree/master/examples/mithril)
 - postcss
 
 And should also work awesomely with candylize, fragmentor, pistontulastic or anything else you can throw at it :thumbsup:
@@ -29,6 +30,12 @@ And should also work awesomely with candylize, fragmentor, pistontulastic or any
 Currently works with Chrome, tested on OSX & Windows 10.
 
 Wright automatically watches any resource (js, css, image, font) that is loaded in the browser, and hot reloads it when it changes.
+
+## Getting started
+
+Wright can start a server for you using a specified index.html file or a boilerplate html where your js & css will be injected into.
+
+It can also take a url to an existing server and inject js & css in to that.
 
 ## CLI API
 ```
@@ -38,103 +45,101 @@ Using wright as a cli makes it easy to get started right away or to set up your 
 
 ## Options
 ```
-main              Main should specify the entry point of your app. If you have
-                  an index.html file that would be it or if you have an app.js
-                  file use that. If you already have you own server running
-                  just specifiy the full url like http://localhost:5000
+main              Specifies the entry point of your app. Point to a .html
+                  file to start a server serving that at all directory paths.
+                  If you already have you own server running specifiy the
+                  full url like http://localhost:5000
 
 Standard Options:
 
 -r,  --run        Activates Hot module reloading. This will inject any changed
                   javascript files, and then run the script or js file
-                  provided here.
+                  provided here. If this is not specified changing javascript
+                  files will cause a full refresh.
 
--s,  --serve      Specify which directory that is being served.
+-s,  --serve      Specify which local directory that is being served.
                   Defaults to folder of main file or the current directory.
 
 -w,  --watch      Any folder, file or file type to watch that should cause a
                   refresh of the browser. Use commas to add more.
 ```
+
 #### Example with all options
 ```
-$ wright public/app.js -s ./public -r "m.redraw()"
+$ wright public/app.js -s ./public -r m.redraw()
 ```
 
 ## Javascript API
 
 Using wright with javascript is great if you have some build steps or compilation that needs to happen before hot reloading js or css.
+It also allows you to avoid touching the file system, thereby getting a quicker time to screen for your js & css changes.
 
 ```
 $ npm install -D wright
 ```
 
-Wright exports one function which takes an object containing options.
+Wright exports a function which takes the options used for launching.
 
-```
+```js
 const wright = require('wright')
 
 wright({
+  // Main should specify the entry point of your app.
+  //   .html   (eg. index.html)
+  //   url     (eg. http://localhost:5000)
+  //   defaults to using a boilerplate html file.
+  main    : 'src/index.html',
 
-  main    : 'public/index.html',
+  // Specify which directory to serve. This is the directory
+  // where wright will watch the files loaded in the browser.
+  // Defaults to root of main html file or CWD.
   serve   : 'public',
+
+  // Activates Hot module reloading. This will inject any
+  // changed javascript files, and then run the script or js
+  // file provided here.
   run     : 'm.redraw()'
+
+  // The JS property dynamically injects scripts without
+  // touching the file system. You can add your build scripts
+  // here to do their thing when your source changes.
+  // Remember you just need to target chrome, so any build
+  // steps including ES6>ES5 transpiling or minification is
+  // unnecessary overhead.
   js      : {
-    watch   : 'src/js/**/*.js',
-    jail    : true,
-    compile : () => rollup()
+    watch   : 'src/js/**/*.js',   // Glob pattern to watch files
+    compile : () => rollup()      // A function that returns a Promise
+                                  // resolving to the source code
   },
+
+  // The css property is also very useful to build and inject
+  // css directly without touch the file system.
   css     : {
-    watch   : 'src/css/**/*.js',
-    compile : () => stylus()
+    watch   : 'src/css/**/*.css', // Glob pattern to watch files
+    compile : () => stylus()      // A function that returns a Promise
+                                  // resolving to the source code
   },
-  watch   : '**/*.php'
+
+  // Watch is only to be used in case you want a quick way to force
+  // a full browser refresh when some files change. This might be
+  // useful in the case of a php server serving static html that
+  // you want to see on file changes
+  watch   : '**/*.php'            // Glob pattern
 })
 ```
 
-### Options
-
-
-#### main [String]
-Main should specify the entry point of your app. If you have an index.html file that would be it or if you have an app.js file use that. If you already have you own server running specifiy the full url like http://localhost:5000.
-If you don't specify anything wright will use a boilerplate html file and expect you to use the js & css options for injecting your code.
-
-#### serve [String]
-Specify which directory to serve. This is the directory where wright will watch the files loaded in the browser.
-Defaults to root of main html file or CWD.
-
-#### run [String]
-Activates Hot module reloading. This will inject any changed javascript files, and then run the script or js file provided here.
-
-#### js [Object]
-You can add your build scripts here to do their thing when your source changes.
-Remember you just need to target chrome, so any build steps including ES6>ES5 transpiling or minification is unnecessary overhead.
-
-name     | description
-:--------|:-----
-watch    | Directory, file, glob pattern or array of what to watch.
-jail     | This will jail variables in your script to stop chrome from dereferencing them while doing Hot module reloading. Defaults to true.
-compile  | A function returning a promise, that resolve to a compiled css string.
-
-#### css
-Any css preprocessing can be done here.
-
-name     | description
-:--------|:-----
-watch    | Directory, file, glob pattern or array of what to watch.
-compile  | A function returning a promise, that resolve to a compiled css string.
-
-#### Watch
-Directory, file, glob pattern or array of something to watch that should cause a browser refresh
-
 ## Advanced
 
-The options object also takes the following more advanced properties:
+The cli or options object also takes the following more advanced options:
 
 **port** (default 3000)
-The port to serve from
+The port to serve from - Wright will use this as a starting point when probing for available ports.
 
 **debug** (default false)
-Set to true to receive debugging info in the console, or to 2 to also receive chrome output
+Set to true to receive debugging info in the console. If set to 2 output from chrome will also be shown.
 
 **fps** (default false)
 Activate the chrome fps gui widget
+
+**jail** (default true)
+This will jail variables in your script to stop chrome from dereferencing them while doing Hot module reloading. Defaults to true.
