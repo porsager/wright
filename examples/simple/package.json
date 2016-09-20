@@ -2,7 +2,6 @@
   "name": "wright-example-simple",
   "version": "1.0.0",
   "scripts": {
-    "html": "node ../../bin/wright -r \"window.reload()\" index.html",
-    "files": "node ../../bin/wright -r \"window.reload()\" js/app.js css/style.css"
+    "wright": "node ../../bin/wright -r \"reload()\" index.html"
   }
 }
