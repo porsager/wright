@@ -37,16 +37,15 @@ else if (version)
   return console.log('wright version ' + pkg.version)
 
 wright({
-  main: command.main,
-  run: command.run,
-  name: command.name,
-  runAll: command['run-all'],
-  jail: command.jail,
-  fps: command.fps,
-  port: command.port,
-  serve: command.serve,
-  debug: command.debug,
-  jsDelay: command['js-delay'],
-  cssDelay: command['css-delay'],
-  watch: command.watch
+  main      : command.main,
+  run       : command.run,
+  name      : command.name,
+  runAll    : command['run-all'],
+  jail      : command.jail,
+  fps       : command.fps,
+  port      : command.port,
+  serve     : command.serve,
+  debug     : command.debug,
+  jsDelay   : command['js-delay'],
+  watch     : command.watch
 }).catch(err => console.error(err))
