@@ -7,7 +7,7 @@ const minimist = require('minimist')
     , pkg = require('../package.json')
 
 const command = minimist(process.argv.slice(2), {
-  string: ['run-all', 'js-delay', 'css-delay'],
+  string: ['run-all'],
   default: {
     'jail': true
   },
@@ -46,6 +46,5 @@ wright({
   port      : command.port,
   serve     : command.serve,
   debug     : command.debug,
-  jsDelay   : command['js-delay'],
   watch     : command.watch
 }).catch(err => console.error(err))
