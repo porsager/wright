@@ -7,7 +7,7 @@ const minimist = require('minimist')
     , pkg = require('../package.json')
 
 const command = minimist(process.argv.slice(2), {
-  string: ['run-all'],
+  string: ['run-all', 'js', 'css'],
   default: {
     'jail': true
   },
@@ -39,6 +39,8 @@ else if (version)
 wright({
   main      : command.main,
   run       : command.run,
+  js        : command.js ? parseInjections(command.js) : null,
+  css       : command.css ? parseInjections(command.css) : null,
   name      : command.name,
   runAll    : command['run-all'],
   jail      : command.jail,
@@ -48,3 +50,11 @@ wright({
   debug     : command.debug,
   watch     : command.watch
 }).catch(err => console.error(err))
+
+function parseInjections(str) {
+  return (Array.isArray(str) ? str : [str]).map(part => ({
+    compile: part.split(';')[0],
+    path: part.split(';')[1] === '_' ? null : part.split(';')[1],
+    watch: part.split(';')[2] === '_' ? null : part.split(';')[2],
+  }))
+}
