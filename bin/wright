@@ -14,6 +14,7 @@ const command = minimist(process.argv.slice(2), {
   alias: {
     h: 'help',
     v: 'version',
+    e: 'execute',
     r: 'run',
     s: 'serve',
     p: 'port',
@@ -41,6 +42,7 @@ wright({
   run       : command.run,
   js        : command.js ? parseInjections(command.js) : null,
   css       : command.css ? parseInjections(command.css) : null,
+  execute   : command.execute ? parseExecutes(command.execute) : null,
   name      : command.name,
   runAll    : command['run-all'],
   jail      : command.jail,
@@ -56,5 +58,12 @@ function parseInjections(str) {
     compile: part.split(';')[0],
     path: part.split(';')[1] === '_' ? null : part.split(';')[1],
     watch: part.split(';')[2] === '_' ? null : part.split(';')[2],
+  }))
+}
+
+function parseExecutes(str) {
+  return (Array.isArray(str) ? str : [str]).map(part => ({
+    args: part.split(';')[0],
+    watch: part.split(';')[1]
   }))
 }
