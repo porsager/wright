@@ -3,9 +3,9 @@
 #### Hot Module Reloading: at the *Virtual Machine* level
 
 - Compatible with any framework (or no framework at all)
-- Patches your JS, CSS and Static Assets on change without losing instance state
+- Patches your JS, CSS and Static Assets on change without losing app state
 - Uses the Chrome Debugger Protocol to replace the source files in the VM
-- Convenient CLI for lightweight build systems / npm scripts
+- Convenient CLI/JS API for lightweight build systems / npm scripts
 - Fallback to regular refresh if the Chrome Debugger Protocol is not available
 
 ## Framework Support
@@ -62,6 +62,10 @@ Standard Options:
 
 -w,  --watch      Any folder, file or file type to watch that should cause a
                   refresh of the browser. Use commas to add more.
+
+     --js         
+
+     --css
 ```
 
 #### Example
@@ -93,12 +97,14 @@ wright({
   // Specify which directory to serve. This is the directory
   // where wright will watch the files loaded in the browser.
   // Defaults to root of main html file or CWD.
-  serve   : 'public',
+  serve   : String,       // Path to directory to serve
+                          // Defaults Defaults to root of main
+                          // html file or CWD.
 
   // Activates Hot module reloading. This will inject any
   // changed javascript files, and then run the script or js
   // file provided here.
-  run     : 'm.redraw()'
+  run     : String        // Code to eval or path to .js file
 
   // The JS property dynamically injects scripts without
   // touching the file system. You can add your build scripts
@@ -107,24 +113,44 @@ wright({
   // steps including ES6>ES5 transpiling or minification is
   // unnecessary overhead.
   js      : {
-    watch   : 'src/js/**/*.js',   // Glob pattern to watch files
-    compile : () => rollup()      // A function that returns a Promise
-                                  // resolving to the source code
+    compile : Function    // A function that returns a Promise
+                          // resolving to the source code, or a
+                          // function with a callback argument called
+                          // in node style callback(err, code).
+                          // * Required
+
+    path    : String,     // Path to use as script src
+                          // Defaults to wrightinjected.js
+
+    watch   : String,     // Glob pattern used to watch files
+                          // that should trigger compilation.
+                          // Defaults to common js extensions
+                          // '**/*.{js,ls,purs,ts,cljs,coffee,litcoffee,jsx}'
   },
 
   // The css property is also very useful to build and inject
   // css directly without touch the file system.
   css     : {
-    watch   : 'src/css/**/*.css', // Glob pattern to watch files
-    compile : () => stylus()      // A function that returns a Promise
-                                  // resolving to the source code
+    compile : Function    // A function that returns a Promise
+                          // resolving to the source code, or a
+                          // function with a callback argument called
+                          // in node style callback(err, code).
+                          // * Required
+
+    path    : String,     // Path to use as script src
+                          // Defaults to wrightinjected.js
+
+    watch   : String,     // Glob pattern used to watch files
+                          // that should trigger compilation.
+                          // Defaults to common js extensions
+                          // '**/*.{css,styl,less,sass}'
   },
 
   // Watch is only to be used in case you want a quick way to force
   // a full browser refresh when some files change. This might be
   // useful in the case of a php server serving static html that
   // you want to see on file changes
-  watch   : '**/*.php'            // Glob pattern
+  watch   : String        // Glob pattern
 })
 ```
 
