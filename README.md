@@ -104,7 +104,7 @@ wright({
   // Activates Hot module reloading. This will inject any
   // changed javascript files, and then run the global function
   // with the changed path as argument { path: 'file.js' }.
-  run     : String        // Global function to call on change
+  run     : String,       // Global function to call on change
 
   // The JS property dynamically injects scripts without
   // touching the file system. You can add your build scripts
@@ -129,7 +129,7 @@ wright({
   },
 
   // The css property is also very useful to build and inject
-  // css directly without touch the file system.
+  // css directly without touching the file system.
   css     : {
     compile : Function    // A function that returns a Promise
                           // resolving to the source code, or a
@@ -145,6 +145,12 @@ wright({
                           // Defaults to common js extensions
                           // '**/*.{css,styl,less,sass}'
   },
+
+  // Execute can be used to start another running process.
+  // This can be a build command with watch capabilites like
+  // `rollup -c --watch` or backend server api the app needs
+  // to talk to.
+  execute : String,        // A single or multiple commands
 
   // Watch is only to be used in case you want a quick way to force
   // a full browser refresh when some files change. This might be

@@ -23,11 +23,24 @@ Standard Options:
 
 Advanced Options:
 
--f,  --fps        Activate the chrome fps counter.
--d,  --debug      Enable debug logging.
--n,  --name       Name to use for chrome profile - defaults to cwd name.
--j,  --jail       Toggles jailing of js code - defaults to true.
--p,  --port       Start probing at this port for serving.
--v,  --version    Output the version.
+-f,  --fps        Activate the chrome fps counter
+-d,  --debug      Enable debug logging
+-n,  --name       Name to use for chrome profile - defaults to cwd name
+-j,  --jail       Toggles jailing of js code - defaults to true
+-c,  --clone      Will copy any resources loaded by chrome to the cwd
+-p,  --port       Start probing at this port for serving
+-v,  --version    Output the version
+
+-e,  --execute    Allows running another task like 'npm run build'
+                  Formatted like 'command;watch'
+                  watch is optional and will restart the command if triggered
+
+     --js         build command that outputs js to stdout
+                  Formated like 'command;path;watch'
+                  path and watch are optional and can be ignored with a _
+
+     --css        build command that outputs css to stdout
+                  Formated like 'command;path;watch'
+                  path and watch are optional and can be ignored with a _
 
 For more information visit - https://github.com/porsager/wright
