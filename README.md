@@ -53,8 +53,8 @@ main              Specifies the entry point of your app. Point to a .html
 Standard Options:
 
 -r,  --run        Activates Hot module reloading. This will inject any changed
-                  javascript files, and then run the script or js file
-                  provided here. If this is not specified changing javascript
+                  javascript files, and then run the function if supplied.
+                  If this is not specified, changing javascript
                   files will cause a full refresh.
 
 -s,  --serve      Specify which local directory that is being served.
@@ -102,9 +102,9 @@ wright({
                           // html file or CWD.
 
   // Activates Hot module reloading. This will inject any
-  // changed javascript files, and then run the script or js
-  // file provided here.
-  run     : String        // Code to eval or path to .js file
+  // changed javascript files, and then run the global function
+  // with the changed path as argument { path: 'file.js' }.
+  run     : String        // Global function to call on change
 
   // The JS property dynamically injects scripts without
   // touching the file system. You can add your build scripts
