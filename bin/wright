@@ -7,7 +7,7 @@ const minimist = require('minimist')
     , pkg = require('../package.json')
 
 const command = minimist(process.argv.slice(2), {
-  string: ['run-all', 'js', 'css'],
+  string: ['js', 'css'],
   default: {
     'jail': true
   },
@@ -45,7 +45,6 @@ wright({
   css       : command.css ? parseInjections(command.css) : null,
   execute   : command.execute ? parseExecutes(command.execute) : null,
   name      : command.name,
-  runAll    : command['run-all'],
   jail      : command.jail,
   fps       : command.fps,
   port      : command.port,

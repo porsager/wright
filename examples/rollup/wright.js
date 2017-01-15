@@ -5,7 +5,7 @@ const wright = require('../../lib')
 
 wright({
   debug: true,
-  run: 'window.reload()',
+  run: 'window.reload',
   js: {
     watch: 'js/**/*.js',
     compile: roll
