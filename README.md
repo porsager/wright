@@ -1,3 +1,5 @@
+[![Join the chat at https://gitter.im/porsager/wright](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/porsager/wright?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 # Wright
 
 #### Hot Module Reloading: at the *Virtual Machine* level
