@@ -47,7 +47,6 @@ header nav a {
   cursor: pointer;
   text-decoration: none;
   color: gray;
-  transition: all 0.2s;
 }
 
 header nav a:hover, header nav a.active {
