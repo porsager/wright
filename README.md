@@ -8,7 +8,7 @@
 - Patches your JS, CSS and Static Assets on change without losing app state
 - Uses the Chrome Debugger Protocol to replace the source files in the VM
 - Convenient CLI/JS API for lightweight build systems / npm scripts
-- Fallback to regular refresh if the Chrome Debugger Protocol is not available
+- Fallback to regular refresh in all other browsers
 
 ## Framework Support
 
