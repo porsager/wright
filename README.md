@@ -41,7 +41,7 @@ It can also take a url to an existing server and inject js & css in to that.
 
 ## CLI API
 ```
-$ npm install -g wright
+$ npm install -g porsager/wright
 ```
 Using wright as a cli makes it easy to get started right away or to set up your project with npm scripts.
 
