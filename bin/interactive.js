@@ -168,7 +168,7 @@ const questions = [
     type: 'confirm',
     name: 'pkgjson',
     message: 'Add CLI command to package.json scripts',
-    when: () => fs.existsSync(path.join(process.cwd(), 'package.json'))
+    when: (a) => a.output !== 'js' && fs.existsSync(path.join(process.cwd(), 'package.json'))
   }, {
     type: 'input',
     name: 'pkgjson',
