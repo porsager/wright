@@ -64,7 +64,7 @@ function parseInjections(str) {
 
 function parseExecutes(str) {
   return (Array.isArray(str) ? str : [str]).map(part => ({
-    args: part.split(';')[0],
+    command: part.split(';')[0],
     watch: part.split(';')[1]
   }))
 }
