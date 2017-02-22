@@ -5,6 +5,9 @@ const minimist = require('minimist')
     , path = require('path')
     , wright = require('../lib/')
     , pkg = require('../package.json')
+    , utils = require('../lib/utils')
+
+utils.requireChrome()
 
 const command = minimist(process.argv.slice(2), {
   string: ['js', 'css'],
@@ -27,6 +30,9 @@ const command = minimist(process.argv.slice(2), {
   },
   boolean: ['fps', 'jail']
 })
+
+if (command._.length === 0)
+  return require('./interactive')
 
 command.main = command._[0]
 
