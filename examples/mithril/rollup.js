@@ -9,6 +9,7 @@ wright({
   run: 'm.redraw',
   js: {
     watch: 'js/**/*.js',
+    path: '/js/app.js',
     compile: roll
   }
 })
