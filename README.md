@@ -22,8 +22,8 @@ Tested successfully with:
 - React
 - [Mithril](https://github.com/porsager/Wright/tree/master/examples/mithril)
 - [Rollup](https://github.com/porsager/Wright/tree/master/examples/rollup)
-- Browserify
-- [Webpack](https://github.com/porsager/Wright/tree/master/examples/webpack)
+- [Browserify](https://github.com/porsager/Wright/tree/master/examples/mithril)
+- Webpack
 - [Stylus](https://github.com/porsager/Wright/tree/master/examples/mithril)
 - postcss
 
