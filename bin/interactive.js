@@ -229,20 +229,20 @@ wright({
   main: '${ a.main }',
   debug: ${ String(a.debug) },
   serve: '${ String(a.serve) }',
-  run: ${ a.run },
+  run: '${ a.run }',
 
 ${ a.css ? '' : '  /* See more in the docs' }
   css: [{
-    compile: ${ a.css ? a.css.compile : 'undefined' },
-    path: ${ a.css ? a.css.path : 'undefined' },
-    watch: ${ a.css ? a.css.watch : 'undefined' }
+    compile: '${ a.css ? a.css.compile : '' }',
+    path: '${ a.css ? a.css.path : '' }',
+    watch: '${ a.css ? a.css.watch : '' }'
   }],
 ${ a.css ? '' : '  */'}
 ${ a.js ? '' : '  /* See more in the docs'}
   js: [{
-    compile: ${ a.js ? a.js.compile : 'undefined' },
-    path: ${ a.js ? a.js.path : 'undefined' },
-    watch: ${ a.js ? a.js.watch : 'undefined' }
+    compile: '${ a.js ? a.js.compile : '' }',
+    path: '${ a.js ? a.js.path : '' }',
+    watch: '${ a.js ? a.js.watch : '' }'
   }],
 ${ a.js ? '' : '  */'}
 ${ a.execute ? '' : '  /* See more in the docs' }
