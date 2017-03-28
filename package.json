@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "description": "",
   "author": "Rasmus Porsager <rasmus@porsager.com>",
-  "license": "MIT",
+  "license": "WTFPL",
   "main": "lib/index.js",
   "bin": {
     "wright": "./bin/wright"
