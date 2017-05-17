@@ -131,7 +131,7 @@ wright({
   // steps including ES6>ES5 transpiling or minification is
   // unnecessary overhead.
   js      : {
-    compile : Function    // A function that returns a Promise
+    compile : Function,   // A function that returns a Promise
                           // resolving to the source code, or a
                           // function with a callback argument called
                           // in node style callback(err, code).
@@ -149,7 +149,7 @@ wright({
   // The css property is also very useful to build and inject
   // css directly without touching the file system.
   css     : {
-    compile : Function    // A function that returns a Promise
+    compile : Function,   // A function that returns a Promise
                           // resolving to the source code, or a
                           // function with a callback argument called
                           // in node style callback(err, code).
