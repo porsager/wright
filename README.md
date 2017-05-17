@@ -10,6 +10,22 @@
 - Convenient CLI/JS API for lightweight build systems / npm scripts
 - Fallback to regular refresh in all other browsers
 
+## Quick start
+
+Wright was built to be able to plugin to various developer setups, and due to that it will have to be set up in many different ways. The quickest way to start is to open a terminal, cd to your project directory. 
+
+Then start wright by pointing either to your main .html entry point
+```
+wright index.html
+```
+
+or a url if you already have a dev server.
+```
+wright http://localhost:3000
+```
+
+From there on you can add extra options to benefit from wrights complete functionality.
+
 ## Framework Support
 
 Wright is framework agnostic because the code patching happens at the VM level.
