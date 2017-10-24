@@ -88,7 +88,7 @@ Standard Options:
 
 #### Example
 ```
-$ wright dist/index.html -r "m.redraw()"
+$ wright dist/index.html -r "m.redraw"
 ```
 
 ## Javascript API
