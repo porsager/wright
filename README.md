@@ -116,7 +116,7 @@ wright({
   // where wright will watch the files loaded in the browser.
   // Defaults to root of main html file or CWD.
   serve   : String,       // Path to directory to serve
-                          // Defaults Defaults to root of main
+                          // Defaults to root of main
                           // html file or CWD.
 
   // Activates Hot module reloading. This will inject any
