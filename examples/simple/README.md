@@ -18,7 +18,7 @@ When hot reloading javascript you need something in JS that can redraw your view
 
 ## Virtual DOM examples
 
-- [Mithril](https://github.com/porsager/wright/examples/mithril)
+- [Mithril](https://github.com/porsager/wright/tree/master/examples/mithril)
 
 ### Coming soon
 - React.js
