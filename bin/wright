@@ -7,8 +7,6 @@ const minimist = require('minimist')
     , pkg = require('../package.json')
     , utils = require('../lib/utils')
 
-utils.requireChrome()
-
 const command = minimist(process.argv.slice(2), {
   string: ['js', 'css'],
   default: {
@@ -16,6 +14,7 @@ const command = minimist(process.argv.slice(2), {
   },
   alias: {
     h: 'help',
+    b: 'browser',
     v: 'version',
     e: 'execute',
     r: 'run',
@@ -47,6 +46,7 @@ else if (version)
 wright({
   main      : command.main,
   run       : command.run,
+  browser   : command.browser || 'chrome',
   js        : command.js ? parseInjections(command.js) : null,
   css       : command.css ? parseInjections(command.css) : null,
   execute   : command.execute ? parseExecutes(command.execute) : null,

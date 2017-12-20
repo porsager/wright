@@ -27,7 +27,7 @@ const questions = [
     name: 'main',
     message: 'What would you like to work on?',
     choices: [
-      { name: 'A served site  (eg. http://locahost:3000)', short: 'url', value: 'url' },
+      { name: 'A served site  (eg. http://localhost:3000)', short: 'url', value: 'url' },
       { name: 'Local files    (eg. index.html)', short: 'local', value: 'local' }
     ]
   }, {
