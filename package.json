@@ -25,14 +25,14 @@
   },
   "dependencies": {
     "astring": "1.2.0",
-    "chokidar": "1.7.0",
+    "chokidar": "2.0.2",
     "esprima": "4.0.0",
-    "finalhandler": "1.1.0",
+    "finalhandler": "1.1.1",
     "http-proxy": "1.16.2",
-    "inquirer": "4.0.1",
+    "inquirer": "5.1.0",
     "minimist": "1.2.0",
     "pws": "1.0.1",
-    "serve-static": "1.13.1",
-    "ws": "3.3.3"
+    "serve-static": "1.13.2",
+    "ws": "5.0.0"
   }
 }
