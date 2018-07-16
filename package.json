@@ -16,15 +16,13 @@
   },
   "repository": "porsager/wright",
   "dependencies": {
-    "astring": "1.2.0",
-    "chokidar": "2.0.2",
-    "esprima": "4.0.0",
+    "chokidar": "2.0.4",
     "finalhandler": "1.1.1",
-    "http-proxy": "1.16.2",
-    "inquirer": "5.1.0",
+    "http-proxy": "1.17.0",
+    "inquirer": "6.0.0",
     "minimist": "1.2.0",
     "pws": "1.0.1",
     "serve-static": "1.13.2",
-    "ws": "5.0.0"
+    "ws": "5.2.2"
   }
 }
