@@ -22,6 +22,6 @@ function roll() {
       nodeResolve(),
       commonJs()
     ]
-  }).then(bundle => bundle.generate({ format: 'iife' }).code)
+  }).then(bundle => bundle.generate({ format: 'iife' }))
 
 }
