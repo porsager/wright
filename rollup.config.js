@@ -18,6 +18,7 @@ export default {
   ],
   output: {
     file: 'lib/browser/wright.js',
-    format: 'iife'
+    format: 'iife',
+    sourcemap: true
   }
 }
