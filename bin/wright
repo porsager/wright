@@ -10,7 +10,8 @@ const minimist = require('minimist')
 const command = minimist(process.argv.slice(2), {
   string: ['js', 'css'],
   default: {
-    'jail': true
+    'jail': true,
+    'assets': []
   },
   alias: {
     h: 'help',
@@ -19,6 +20,7 @@ const command = minimist(process.argv.slice(2), {
     e: 'execute',
     r: 'run',
     s: 'serve',
+    a: 'assets',
     p: 'port',
     d: 'debug',
     f: 'fps',
@@ -55,6 +57,7 @@ wright({
   fps       : command.fps,
   port      : command.port,
   serve     : command.serve,
+  assets    : command.assets,
   clone     : command.clone,
   debug     : command.debug,
   watch     : command.watch
