@@ -52,6 +52,7 @@ wright({
   js        : command.js ? parseInjections(command.js) : null,
   css       : command.css ? parseInjections(command.css) : null,
   execute   : command.execute ? parseExecutes(command.execute) : null,
+  env       : command.env,
   name      : command.name,
   jail      : command.jail,
   fps       : command.fps,
