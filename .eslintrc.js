@@ -6,7 +6,7 @@ module.exports = {
     es6: true
   },
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 8,
     sourceType: 'module',
     ecmaFeatures: {
       experimentalObjectRestSpread: true
@@ -32,7 +32,7 @@ module.exports = {
     'no-inner-declarations': 2,
     'no-invalid-regexp': 2,
     'no-irregular-whitespace': 2,
-    'no-negated-in-lhs': 2,
+    'no-negated-in-lhs': 0,
     'no-obj-calls': 2,
     'no-regex-spaces': 2,
     'no-sparse-arrays': 2,
@@ -97,7 +97,7 @@ module.exports = {
     'no-script-url': 2,
     'no-self-assign': 2,
     'no-self-compare': 2,
-    'no-sequences': 2,
+    'no-sequences': 0,
     'no-throw-literal': 2,
     'no-unmodified-loop-condition': 2,
     'no-unused-expressions': 0,
@@ -118,11 +118,12 @@ module.exports = {
     'no-undef': 2,
     'no-undef-init': 2,
     'no-unused-vars': [1, {
-      'vars': 'all',
-      'args': 'none'
+      vars: 'all',
+      args: 'none'
     }],
     'no-use-before-define': [2, {
-      "functions": false
+      functions: false,
+      variables: false
     }],
 
     /* Node.js and CommonJS */
@@ -141,7 +142,7 @@ module.exports = {
     'brace-style': [2, '1tbs', {
       "allowSingleLine": true
     }],
-    'camelcase': 2,
+    'camelcase': 0,
     'comma-spacing': 2,
     'comma-style': [2, 'first', {
       exceptions: {
@@ -153,6 +154,7 @@ module.exports = {
     'eol-last': 2,
     'indent': [2, 2, {
       MemberExpression: 'off',
+      flatTernaryExpressions: true,
       VariableDeclarator: {
         const: 2
       },
@@ -177,7 +179,7 @@ module.exports = {
     'max-len': [2, 120],
     'max-nested-callbacks': [2, 5],
     'max-params': [2, 4],
-    'max-statements-per-line': 2,
+    'max-statements-per-line': 0,
     'new-cap': [2, {
       capIsNew: false
     }],
@@ -189,7 +191,7 @@ module.exports = {
     'no-continue': 2,
     'no-lonely-if': 2,
     'no-mixed-spaces-and-tabs': 2,
-    'no-negated-condition': 2,
+    'no-negated-condition': 0,
     'no-new-object': 2,
     'no-spaced-func': 2,
     'no-trailing-spaces': 1,
