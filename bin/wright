@@ -61,7 +61,8 @@ wright({
   assets    : command.assets,
   clone     : command.clone,
   debug     : command.debug,
-  watch     : command.watch
+  watch     : command.watch,
+  watchThrottle: command['watch-throttle']
 }).catch(err => console.error(err))
 
 function parseInjections(str) {
