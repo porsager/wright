@@ -1,6 +1,6 @@
 import m from 'mithril'
-import routes from './routes'
-import login from './models/login'
+import routes from './routes.js'
+import login from './models/login.js'
 
 window.m = m
 
