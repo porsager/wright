@@ -1,6 +1,6 @@
 {
   "name": "wright",
-  "version": "2.0.0-beta27",
+  "version": "2.0.0-beta31",
   "description": "",
   "author": "Rasmus Porsager <rasmus@porsager.com>",
   "license": "WTFPL",
@@ -20,7 +20,7 @@
   "dependencies": {
     "chokidar": "2.0.4",
     "dotenv": "6.2.0",
-    "ey": "0.3.0",
+    "ey": "0.6.0",
     "finalhandler": "1.1.1",
     "http-proxy": "1.17.0",
     "inquirer": "6.2.1",
