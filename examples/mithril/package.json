@@ -14,7 +14,7 @@
     "babelify": "7.3.0",
     "browserify": "13.1.0",
     "memory-fs": "^0.4.1",
-    "mithril": "1.0.1",
+    "mithril": "2.0.0-rc.3",
     "rollup": "0.34.1",
     "rollup-plugin-commonjs": "3.3.1",
     "rollup-plugin-node-resolve": "2.0.0",

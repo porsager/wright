@@ -1,9 +1,9 @@
 import m from 'mithril'
-import l from './layout'
-import login from './pages/login'
-import intro from './pages/intro'
-import js from './pages/js'
-import css from './pages/css'
+import l from './layout.js'
+import login from './pages/login.js'
+import intro from './pages/intro.js'
+import js from './pages/js.js'
+import css from './pages/css.js'
 
 m.route.prefix('')
 

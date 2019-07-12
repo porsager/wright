@@ -1,5 +1,5 @@
 import m from 'mithril'
-import login from '../models/login'
+import login from '../models/login.js'
 
 export default {
   oninit: ({ state }) => {
