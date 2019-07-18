@@ -14,7 +14,8 @@
     "prepublishOnly": "npm run build",
     "try:rollup": "npm install && cd examples/rollup && npm install && node wright",
     "try:mithril": "npm install && cd examples/mithril && npm install && node rollup",
-    "try:simple": "npm install && cd examples/simple && node ../../bin/wright -r \"window.reload()\" index.html"
+    "try:simple": "npm install && cd examples/simple && node ../../bin/wright -r \"window.reload()\" index.html",
+    "test": "tape test/**"
   },
   "repository": "porsager/wright",
   "dependencies": {
@@ -34,9 +35,13 @@
   "devDependencies": {
     "bss": "1.6.3",
     "mithril": "1.1.6",
+    "pws": "1.0.2",
     "rollup": "1.16.7",
     "rollup-plugin-buble": "0.19.8",
     "rollup-plugin-commonjs": "10.0.1",
-    "rollup-plugin-node-resolve": "5.2.0"
+    "rollup-plugin-node-resolve": "5.2.0",
+    "serve-static": "1.13.2",
+    "tape": "^4.11.0",
+    "ws": "6.0.0"
   }
 }
