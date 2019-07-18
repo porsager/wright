@@ -65,9 +65,9 @@ test('windows', (t) => {
     const wrightData = wrightDataDirectory(process)
     const appData = normalize(getAppDataDirectory(process, 'example'))
     
-    t.equals(normalize(wrightData.chrome), 'C:/Users/porsager/wright', 'Chrome')
-    t.equals(appData, 'C:/Users/porsager/wright/example', 'AppData')
-    t.equals(normalize(wrightData.node), 'C:/Users/porsager/wright', 'Node')
+    t.equals(normalize(wrightData.chrome), 'C:/Users/porsager/.wright', 'Chrome')
+    t.equals(appData, 'C:/Users/porsager/.wright/example', 'AppData')
+    t.equals(normalize(wrightData.node), 'C:/Users/porsager/.wright', 'Node')
     t.end()
 })
 
