@@ -12,8 +12,7 @@ export default {
     buble({
       transforms: {
         dangerousTaggedTemplateString: true
-      },
-      objectAssign: 'Object.assign'
+      }
     })
   ],
   output: {
