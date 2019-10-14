@@ -19,14 +19,14 @@
   },
   "repository": "porsager/wright",
   "dependencies": {
-    "chokidar": "3.0.2",
+    "chokidar": "3.2.1",
     "dotenv": "8.1.0",
     "ey": "0.7.0",
     "finalhandler": "1.1.2",
     "http-proxy": "1.18.0",
     "inquirer": "6.5.1",
     "minimist": "1.2.0",
-    "pws": "4.1.1",
+    "pws": "4.1.2",
     "serve-static": "1.14.1",
     "source-map": "0.7.3",
     "ubre": "0.0.20",
@@ -34,12 +34,11 @@
   },
   "devDependencies": {
     "bss": "1.6.3",
-    "mithril": "1.1.6",
-    "rollup": "1.22.0",
+    "mithril": "1.1.7",
+    "rollup": "1.23.1",
     "rollup-plugin-buble": "0.19.8",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "serve-static": "1.13.2",
     "tape": "4.11.0"
   }
 }
