@@ -23,7 +23,7 @@
     "dotenv": "8.2.0",
     "ey": "0.9.1",
     "finalhandler": "1.1.2",
-    "http-proxy": "1.18.0",
+    "http-proxy": "1.18.1",
     "inquirer": "7.1.0",
     "minimist": "1.2.5",
     "pws": "5.0.1",
