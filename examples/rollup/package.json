@@ -5,9 +5,9 @@
     "wright": "node wright.js"
   },
   "dependencies": {
-    "rollup": "2.7.6"
+    "rollup": "2.26.11"
   },
   "devDependencies": {
-    "stylus": "0.54.7"
+    "stylus": "0.54.8"
   }
 }
