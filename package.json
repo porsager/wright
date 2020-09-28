@@ -35,7 +35,7 @@
   "devDependencies": {
     "bss": "1.6.4",
     "mithril": "2.0.4",
-    "rollup": "2.26.11",
+    "rollup": "2.28.2",
     "rollup-plugin-buble": "0.19.8",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
