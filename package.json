@@ -19,18 +19,19 @@
   },
   "repository": "porsager/wright",
   "dependencies": {
-    "chokidar": "3.5.0",
-    "dotenv": "8.2.0",
+    "chokidar": "3.5.3",
+    "dotenv": "16.0.0",
     "ey": "0.9.1",
-    "finalhandler": "1.1.2",
+    "finalhandler": "1.2.0",
     "http-proxy": "1.18.1",
-    "inquirer": "7.3.3",
+    "inquirer": "8.2.2",
     "minimist": "1.2.6",
     "pws": "5.0.2",
-    "serve-static": "1.14.1",
+    "serve-static": "1.15.0",
     "source-map": "0.7.3",
-    "ubre": "0.0.21",
-    "ws": "7.4.2"
+    "ubre": "0.0.23",
+    "update": "0.7.4",
+    "ws": "8.5.0"
   },
   "devDependencies": {
     "bss": "1.6.4",
