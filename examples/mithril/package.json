@@ -1,6 +1,9 @@
 {
   "name": "wright-example-mithril",
   "version": "1.0.0",
+  "scripts": {
+    "wright": "../../bin/wright -r m.redraw index.html"
+  },
   "dependencies": {
     "mithril": "github:porsager/mithril.js#esm-dev"
   }

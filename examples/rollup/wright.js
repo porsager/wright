@@ -19,9 +19,10 @@ wright({
 function roll() {
 
   return rollup.rollup({
-    entry: 'js/app.js'
-  }).then(bundle => bundle.generate({ format: 'iife' }).code)
-
+    input: 'js/app.js'
+  })
+  .then(bundle => bundle.generate({ format: 'iife' }))
+  .then(x => x.output[0].code)
 }
 
 function style() {

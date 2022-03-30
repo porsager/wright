@@ -2,6 +2,6 @@
   "name": "wright-example-simple",
   "version": "1.0.0",
   "scripts": {
-    "wright": "node ../../bin/wright -r \"reload\" index.html"
+    "wright": "../../bin/wright -d -r reload index.html"
   }
 }
