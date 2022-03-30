@@ -5,7 +5,7 @@ import intro from './pages/intro.js'
 import js from './pages/js.js'
 import css from './pages/css.js'
 
-m.route.prefix('')
+m.route.prefix = ''
 
 const routes = {
   '/login'  : login,

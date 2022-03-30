@@ -10,7 +10,7 @@ npm install
 from this directory:
 ```
 npm install
-npm run rollup
+wright index.html
 ```
 
 To see the result try and go change the js and css files.

@@ -10,7 +10,7 @@ export default {
   },
   view: vnode => [
     m('h1', 'js'),
-    m('p', 'This example shows how keeping the state in the browser is possible while doing hot reloading of anything'),
+    m('p', 'Thisexample shows how keeping the state in the browser is possible while doing hot reloading of anything'),
     m('p', 'ms: ' + (Date.now() - vnode.state.start))
   ]
 }
