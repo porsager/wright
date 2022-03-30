@@ -31,7 +31,7 @@
     "source-map": "0.7.3",
     "ubre": "0.0.23",
     "update": "0.7.4",
-    "ws": "8.5.0"
+    "ws": "7.5.7"
   },
   "devDependencies": {
     "bss": "1.6.4",
